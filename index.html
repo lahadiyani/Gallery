@@ -1,0 +1,107 @@
+<html>
+  <meta charset="UTF-8" />
+  <meta
+    content="width=device-width, initial-scale=1, user-scalable=1, minimum-scale=1, maximum-scale=5"
+    name="viewport"
+  />
+  <meta content="IE=edge" http-equiv="X-UA-Compatible" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap"
+    rel="stylesheet"
+  />
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+  <link
+    href="stylerepl.css"
+    rel="stylesheet"
+    type="text/css"
+  />
+  <script src="scriptrepl.js"></script>
+
+  <body>
+    <style>
+      body {
+        background-image: url("kopet.jpg");
+        background-repeat: no-repeat;
+        animation: none;
+        background-size: 100% 100%;
+      }
+    </style>
+
+    <div id="Content">
+      <div class="foto">
+        <div class="image">
+          <!-- Foto Atas -->
+          <img
+            src="kopet.gif"
+            width="100px"
+            height="100px"
+          />
+        </div>
+        <p id="textnama"></p>
+      </div>
+
+      <div id="pergeseran">
+        <p>
+          <i>Geser yaa &#128073;</i>
+        </p>
+        <p>Haloooo &#129395;</p>
+        <p>hai cantik...</p>
+        <p>kamu jangan sering rebahan Mulu</p>
+        <p>harus sering bantu mama jualan</p>
+        <p>terus juga dengerin klo kakak kasih tw</p>
+        <p>biar kakak makin sayang sama kamu</p>
+        <p>Terus juga makan yang banyak biar cepat gemol</p>
+        <p>Mau dengerin kata kakak yah ツ</p>
+        <p>
+          &#128073; <a id="tm" onClick="pmau();">[ Mau ]</a
+          ><a id="tm" onClick="pgakmau();">[ Gak mau ]</a>
+        </p>
+      </div>
+    </div>
+
+    <script>
+      //Audio Link MP3
+      function play() {
+        var audio = new Audio("kopet.mp3");
+        audio.play();
+        audio.loop = true;
+        audio.addEventListener(
+          "ended",
+          function () {
+            this.currentTime = 0;
+            this.play();
+          },
+          false
+        );
+      }
+      //Pembuka
+      var a = 0,
+        textnm;
+      textnm = "Untukmu <3";
+
+      const swals = Swal.mixin({
+        allowOutsideClick: false,
+      });
+
+      async function pmau(){
+
+await swals.fire('Setuju nggak');
+
+await swals.fire('Kirim ini ke no WhatsApp aku, oke?');
+window.location = "https://api.whatsapp.com/send?phone=&text=iyah kakak <3" + "%0A%0A" + "ihh makasih, makin sayang deh sama kamu :v";}
+
+      async function pgakmau() {
+        await swals.fire("yah kamu >:v");
+      }
+
+      async function start() {
+        await swals.fire("Halo ツ");
+        setTimeout(mulai, 900);
+        play();
+      }
+      start();
+    </script>
+  </body>
+</html>
